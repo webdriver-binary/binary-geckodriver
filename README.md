@@ -1,9 +1,9 @@
 # binary-geckodriver
 
-[![Latest Stable Version](https://poser.pugx.org/vaimo/binary-geckodriver/v/stable)](https://packagist.org/packages/vaimo/binary-geckodriver)
-[![Total Downloads](https://poser.pugx.org/vaimo/binary-geckodriver/downloads)](https://packagist.org/packages/vaimo/binary-geckodriver)
-[![Daily Downloads](https://poser.pugx.org/vaimo/binary-geckodriver/d/daily)](https://packagist.org/packages/vaimo/binary-geckodriver)
-[![License](https://poser.pugx.org/vaimo/binary-geckodriver/license)](https://packagist.org/packages/vaimo/binary-geckodriver)
+[![Latest Stable Version](https://poser.pugx.org/LANFest/binary-geckodriver/v/stable)](https://packagist.org/packages/lanfest/binary-geckodriver)
+[![Total Downloads](https://poser.pugx.org/LANFest/binary-geckodriver/downloads)](https://packagist.org/packages/lanfest/binary-geckodriver)
+[![Daily Downloads](https://poser.pugx.org/LANFest/binary-geckodriver/d/daily)](https://packagist.org/packages/lanfest/binary-geckodriver)
+[![License](https://poser.pugx.org/LANFest/binary-geckodriver/license)](https://packagist.org/packages/lanfest/binary-geckodriver)
 
 Downloads geckodriver binary for Linux (32bits or 64bits), macOS (Mac OS X) and Windows. 
 

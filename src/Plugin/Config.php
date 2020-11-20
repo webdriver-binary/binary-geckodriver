@@ -1,13 +1,12 @@
 <?php
-/**
- * Copyright © Vaimo Group. All rights reserved.
- * See LICENSE_VAIMO.txt for license details.
- */
-namespace Vaimo\GeckoDriver\Plugin;
 
-use Vaimo\WebDriverBinaryDownloader\Interfaces\PlatformAnalyserInterface as Platform;
+declare(strict_types=1);
 
-class Config implements \Vaimo\WebDriverBinaryDownloader\Interfaces\ConfigInterface
+namespace Lanfest\GeckoDriver\Plugin;
+
+use Lanfest\WebDriverBinaryDownloader\Interfaces\PlatformAnalyserInterface as Platform;
+
+class Config implements \Lanfest\WebDriverBinaryDownloader\Interfaces\ConfigInterface
 {
     /**
      * @var \Composer\Package\PackageInterface
@@ -23,111 +22,111 @@ class Config implements \Vaimo\WebDriverBinaryDownloader\Interfaces\ConfigInterf
         $this->configOwner = $configOwner;
     }
 
-    public function getPreferences()
+    public function getPreferences(): array
     {
         $extra = $this->configOwner->getExtra();
 
-        $defaults = array(
-            'version' => null
-        );
+        $defaults = [
+            'version' => null,
+        ];
 
         return array_replace(
             $defaults,
-            isset($extra['geckodriver']) ? $extra['geckodriver'] : array()
+            isset($extra['geckodriver']) ? $extra['geckodriver'] : []
         );
     }
 
-    public function getDriverName()
+    public function getDriverName(): string
     {
         return 'GeckoDriver';
     }
     
-    public function getRequestUrlConfig()
+    public function getRequestUrlConfig(): array
     {
         $baseUrl = 'https://github.com/mozilla/geckodriver/releases/download';
         
-        return array(
+        return [
             self::REQUEST_VERSION => false,
-            self::REQUEST_DOWNLOAD => sprintf('%s/v{{version}}/{{file}}', $baseUrl)
-        );
+            self::REQUEST_DOWNLOAD => sprintf('%s/v{{version}}/{{file}}', $baseUrl),
+        ];
     }
     
-    public function getBrowserBinaryPaths()
+    public function getBrowserBinaryPaths(): array
     {
-        return array(
-            Platform::TYPE_LINUX32 => array(
-                '/usr/bin/firefox'
-            ),
-            Platform::TYPE_LINUX64 => array(
-                '/usr/bin/firefox'
-            ),
-            Platform::TYPE_MAC64 => array(
-                '/Applications/Firefox.app/Contents/MacOS/firefox'
-            ),
-            Platform::TYPE_WIN32 => array(
-                'C:\\\\Program Files (x86)\\\\Mozilla Firefox\\\\firefox.exe'
-            ),
-            Platform::TYPE_WIN64 => array(
-                'C:\\\\Program Files (x86)\\\\Mozilla Firefox\\\\firefox.exe'
-            )
-        );
+        return [
+            Platform::TYPE_LINUX32 => [
+                '/usr/bin/firefox',
+            ],
+            Platform::TYPE_LINUX64 => [
+                '/usr/bin/firefox',
+            ],
+            Platform::TYPE_MAC64 => [
+                '/Applications/Firefox.app/Contents/MacOS/firefox',
+            ],
+            Platform::TYPE_WIN32 => [
+                'C:\\\\Program Files (x86)\\\\Mozilla Firefox\\\\firefox.exe',
+            ],
+            Platform::TYPE_WIN64 => [
+                'C:\\\\Program Files (x86)\\\\Mozilla Firefox\\\\firefox.exe',
+            ],
+        ];
     }
     
-    public function getBrowserVersionPollingConfig()
+    public function getBrowserVersionPollingConfig(): array
     {
-        return array(
-            '%s -v' => array('Mozilla Firefox ([0-9].+)'),
-            'wmic datafile where name="%s" get Version /value' => array('Version=([0-9].+)')
-        );
+        return [
+            '%s -v' => ['Mozilla Firefox ([0-9].+)'],
+            'wmic datafile where name="%s" get Version /value' => ['Version=([0-9].+)'],
+        ];
     }
     
-    public function getDriverVersionPollingConfig()
+    public function getDriverVersionPollingConfig(): array
     {
-        return array(
-            '%s --version' => array('geckodriver ([0-9].+) \(')
-        );
+        return [
+            '%s --version' => ['geckodriver ([0-9].+) \('],
+        ];
     }
     
-    public function getBrowserDriverVersionMap()
+    public function getBrowserDriverVersionMap(): array
     {
-        return array(
+        return [
             '66' => '',
             '65' => '0.24.0',
             '57' => '0.23.0',
             '55' => '0.20.1',
-            '1' => '0.16.1'
-        );
+            '1' => '0.16.1',
+        ];
     }
     
-    public function getRemoteFileNames()
+    public function getRemoteFileNames(): array
     {
-        return array(
+        return [
             Platform::TYPE_LINUX32 => 'geckodriver-v{{version}}-linux32.tar.gz',
             Platform::TYPE_LINUX64 => 'geckodriver-v{{version}}-linux64.tar.gz',
             Platform::TYPE_MAC64 => 'geckodriver-v{{version}}-macos.tar.gz',
             Platform::TYPE_WIN32 => 'geckodriver-v{{version}}-win32.zip',
-            Platform::TYPE_WIN64 => 'geckodriver-v{{version}}-win64.zip'
-        );
+            Platform::TYPE_WIN64 => 'geckodriver-v{{version}}-win64.zip',
+        ];
     }
 
-    public function getExecutableFileNames()
+    public function getExecutableFileNames(): array
     {
-        return array(
+        return [
             Platform::TYPE_LINUX32 => 'geckodriver',
             Platform::TYPE_LINUX64 => 'geckodriver',
             Platform::TYPE_MAC64 => 'geckodriver',
             Platform::TYPE_WIN32 => 'geckodriver.exe',
-            Platform::TYPE_WIN64 => 'geckodriver.exe'
-        );
+            Platform::TYPE_WIN64 => 'geckodriver.exe',
+        ];
     }
 
-    public function getDriverVersionHashMap()
+    public function getDriverVersionHashMap(): array
     {
-        return array();
+        return [];
     }
 
-    public function getExecutableFileRenames()
+    public function getExecutableFileRenames(): array
     {
-        return array();
+        return [];
     }
 }
