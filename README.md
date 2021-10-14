@@ -1,9 +1,9 @@
 # binary-geckodriver
 
-[![Latest Stable Version](https://poser.pugx.org/LANFest/binary-geckodriver/v/stable)](https://packagist.org/packages/lanfest/binary-geckodriver)
-[![Total Downloads](https://poser.pugx.org/LANFest/binary-geckodriver/downloads)](https://packagist.org/packages/lanfest/binary-geckodriver)
-[![Daily Downloads](https://poser.pugx.org/LANFest/binary-geckodriver/d/daily)](https://packagist.org/packages/lanfest/binary-geckodriver)
-[![License](https://poser.pugx.org/LANFest/binary-geckodriver/license)](https://packagist.org/packages/lanfest/binary-geckodriver)
+[![Latest Stable Version](https://poser.pugx.org/webdriver-binary/binary-geckodriver/v/stable)](https://packagist.org/packages/webdriver-binary/binary-geckodriver)
+[![Total Downloads](https://poser.pugx.org/webdriver-binary/binary-geckodriver/downloads)](https://packagist.org/packages/webdriver-binary/binary-geckodriver)
+[![Daily Downloads](https://poser.pugx.org/webdriver-binary/binary-geckodriver/d/daily)](https://packagist.org/packages/webdriver-binary/binary-geckodriver)
+[![License](https://poser.pugx.org/webdriver-binary/binary-geckodriver/license)](https://packagist.org/packages/webdriver-binary/binary-geckodriver)
 
 Downloads geckodriver binary for Linux (32bits or 64bits), macOS (Mac OS X) and Windows. 
 
@@ -11,8 +11,6 @@ The binary version is determined by the following factors:
 
 * what browser version is currently installed (if binary found from the system).
 * specified/configured version (see below under 'Configuration' topic)
-    
-More information on recent changes [HERE](./CHANGELOG.md).
 
 ## Configuration
 

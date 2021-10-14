@@ -1,20 +1,21 @@
 {
-    "name": "lanfest/binary-geckodriver",
+    "name": "webdriver-binary/binary-geckodriver",
     "type": "composer-plugin",
     "license": "MIT",
     "description": "Utility for downloading GeckoDriver (Firefox automation) binary for current os/platform",
     "require": {
         "php": ">=7.2",
         "composer-plugin-api": "^1.0 | ^2.0",
-        "lanfest/webdriver-binary-downloader": "^3.0.0"
+        "webdriver-binary/webdriver-binary-downloader": "^3.0.0"
     },
     "replace": {
-        "vaimo/binary-geckodriver": "*"
+        "vaimo/binary-geckodriver": "*",
+        "lanfest/binary-edgedriver": "*"
     },
     "support": {
-        "source": "https://github.com/LANFest/binary-geckodriver",
-        "docs": "https://github.com/LANFest/binary-geckodriver",
-        "issues": "https://github.com/LANFest/binary-geckodriver/issues"
+        "source": "https://github.com/webdriver-binary/binary-geckodriver",
+        "docs": "https://github.com/webdriver-binary/binary-geckodriver",
+        "issues": "https://github.com/webdriver-binary/binary-geckodriver/issues"
     },
     "keywords": [
         "geckodriver",
@@ -31,27 +32,12 @@
         "binary downloader",
         "binary"
     ],
-    "scripts-descriptions": {
-        "test": "Run tests",
-        "code:analyse": "Run static code analysis for the source code",
-        "code:normalise": "Apply automatic fixes to the code based on the static code analysis (where applicable)"
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "code:analyse": "bin/analyse",
-        "code:normalise": "bin/normalise",
-        "post-install-cmd": "bin/bootstrap",
-        "post-update-cmd" : "bin/bootstrap"
-    },
     "autoload": {
         "psr-4": {
-            "Lanfest\\GeckoDriver\\": "src"
+            "WebdriverBinary\\GeckoDriver\\": "src"
         }
     },
     "extra": {
-        "class": "Lanfest\\GeckoDriver\\Plugin",
-        "changelog": {
-            "source": "changelog.json"
-        }
+        "class": "WebdriverBinary\\GeckoDriver\\Plugin"
     }
 }
